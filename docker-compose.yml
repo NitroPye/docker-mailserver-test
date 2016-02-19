@@ -1,0 +1,13 @@
+mail:
+  image: tvial/docker-mailserver
+  hostname: localhost
+  cap_add:
+  - NET_ADMIN
+  ports:
+  - "25:25"
+  - "143:143"
+  - "587:587"
+  - "993:993"
+  volumes:
+  - ./postfix:/tmp/postfix/
+  - ./spamassassin:/tmp/spamassassin/
